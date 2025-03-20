@@ -7,7 +7,7 @@
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     
     <PublishTrimmed>true</PublishTrimmed>
-    <TrimMode>Full</TrimMode>
+    <TrimMode>Link</TrimMode>
     <RunAOTCompilation>true</RunAOTCompilation>
   </PropertyGroup>
 
