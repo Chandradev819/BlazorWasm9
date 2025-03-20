@@ -26,34 +26,13 @@ jobs:
         with:
           dotnet-version: '9.0.x'  # Adjust for your Blazor version
 
+      - name: Install .NET Workloads
+        run: dotnet workload install wasm-tools
+
       - name: Build Blazor WASM in Release Mode
         run: dotnet publish ./BlazorWasm9 -c Release --output release
 
       - name: Compress DLL & WASM files with Brotli
         run: |
           sudo apt-get install brotli
-          brotli -Z -f release/wwwroot/_framework/*.wasm
-          brotli -Z -f release/wwwroot/_framework/*.dll
-
-      - name: Deploy to Azure Static Web Apps
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_SALMON_CLIFF_07E943200 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "release/wwwroot"  # Deploy compressed output
-          api_location: "Api"  # API folder (if used)
-          output_location: ""  # Not needed for Blazor WASM
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_SALMON_CLIFF_07E943200 }}
-          action: "close"
+          brotli -Z -f release/wwwroot/_f
