@@ -5,8 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
-   <WasmEnableWebcil>true</WasmEnableWebcil>
-    <BlazorWebAssemblyEnableILLinking>true</BlazorWebAssemblyEnableILLinking>
   </PropertyGroup>
 
   <ItemGroup>
