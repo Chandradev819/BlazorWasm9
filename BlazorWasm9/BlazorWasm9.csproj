@@ -5,10 +5,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
-    
     <PublishTrimmed>true</PublishTrimmed>
-    <TrimMode>Link</TrimMode>
-    <RunAOTCompilation>true</RunAOTCompilation>
+    <TrimMode>full</TrimMode> 
+   <WasmEnableWebcil>true</WasmEnableWebcil>
   </PropertyGroup>
 
   <ItemGroup>
