@@ -5,8 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
-    <PublishTrimmed>true</PublishTrimmed>
-    <TrimMode>link</TrimMode>
    <WasmEnableWebcil>true</WasmEnableWebcil>
   </PropertyGroup>
 
@@ -18,5 +16,4 @@
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
   </ItemGroup>
-
 </Project>
